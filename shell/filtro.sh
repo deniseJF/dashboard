@@ -22,9 +22,8 @@ curso09='POSTGRADUATE'
 
 egrep '^33' $path  | cut -c104,105-112,151-152 --output-delimiter=, | sed s/^1/HOMEM/ | sed s/^2/MULHER/ | while read line 
 do
-	curso=$(echo $line| cut -d, -f3| sed -E "s/([0-9]{2})$/\$curso\1/")
-    if test -z "$curso" then curso='NONE' fi
-	newLine=$(echo $line | sed -E "s/[0-9]{2}$/$(eval echo $curso)/")
+	curso=$(echo $line| cut -d, -f3 | sed -E "s/([0-9]{2})$/\$curso\1/")
+	newLine=$(echo $line | sed -E "s/[0-9]{2}$/$(eval echo $curso)/" | sed -E "s/,$/,NONE/")
 	echo $newLine >> dados.csv
 
 	# echo $newLine
