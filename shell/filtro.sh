@@ -20,7 +20,7 @@ curso09='POSTGRADUATE'
 # separa colunas sobre sexo, data nascimento e curso respectivamente
 # primeiro caracter, transforma 1 em homem e 2 em mulher
 
-egrep '^33' $path  | cut -c104,105-112,151-152 --output-delimiter=, | sed s/^1/HOMEM/ | sed s/^2/MULHER/ | while read line 
+egrep '^33' $path  | cut -c104,105-112,151-152 --output-delimiter=, | sed s/^1/MALE/ | sed s/^2/FEMALE/ | while read line 
 do
 	curso=$(echo $line| cut -d, -f3 | sed -E "s/([0-9]{2})$/\$curso\1/")
 	newLine=$(echo $line | sed -E "s/[0-9]{2}$/$(eval echo $curso)/" | sed -E "s/,$/,NONE/")
