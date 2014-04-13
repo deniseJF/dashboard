@@ -6,15 +6,15 @@ read path
 
 echo "Criando Arquivo dados.csv"
 
-curso01='Regular do ensino fundamental ou do 1° grau'
-curso02='Regular do ensino médio ou do 2º grau'
-curso03='Supletivo do ensino fundamental ou do 1º grau'
-curso04='Supletivo do ensino médio ou do 2º grau'
-curso05='Superior - graduação'
-curso06='Alfabetização de adultos'
-curso07='Pré-escolar'
-curso08='Pré-vestibular'
-curso09='Mestrado ou doutorado'
+curso01='ELEMENTARY'
+curso02='HIGH_SCHOOL'
+curso03='GED_ELEMENTARY'
+curso04='GED_SECONDARY'
+curso05='BACHELOR'
+curso06='ADULT_LITERACY'
+curso07='PRESCHOOL'
+curso08='PREPARATORY'
+curso09='POSTGRADUATE'
 
 # separa do arquivo do IBGE apenas informações do rio (33)
 # separa colunas sobre sexo, data nascimento e curso respectivamente
@@ -23,6 +23,7 @@ curso09='Mestrado ou doutorado'
 egrep '^33' $path  | cut -c104,105-112,151-152 --output-delimiter=, | sed s/^1/HOMEM/ | sed s/^2/MULHER/ | while read line 
 do
 	curso=$(echo $line| cut -d, -f3| sed -E "s/([0-9]{2})$/\$curso\1/")
+    if test -z "$curso" then curso='NONE' fi
 	newLine=$(echo $line | sed -E "s/[0-9]{2}$/$(eval echo $curso)/")
 	echo $newLine >> dados.csv
 
