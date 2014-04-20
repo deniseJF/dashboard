@@ -1,4 +1,4 @@
-package dashboard.service;
+package myproject.dashboard.service;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import dashboard.entity.Person;
-import dashboard.entity.Statistics;
+import myproject.dashboard.entity.Person;
+import myproject.dashboard.entity.Statistics;
 
 public class DataDownloader {
 	

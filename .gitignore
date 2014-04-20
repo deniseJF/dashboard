@@ -3,3 +3,16 @@ ibge/*
 ibge
 
 *.swp
+
+RemoteSystemsTempFiles
+.metadata
+dashboard/.classpath
+dashboard/.project
+dashboard/.settings/
+dashboard/src/main/java/org
+
+dashboard/.factorypath
+dashboard/README.md
+dashboard/.gitignore
+dashboard/src/test/
+dashboard/src/main/resources/

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    template="/WEB-INF/templates/appTemplate.xhtml">
+    <ui:define name="header">
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	    <script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	      google.setOnLoadCallback(drawChart);
+	      function drawChart() {
+	        var data = google.visualization.arrayToDataTable([
+	          ['Year', 'Sales', 'Expenses'],
+	          ['2004',  1000,      400],
+	          ['2005',  1170,      460],
+	          ['2006',  660,       1120],
+	          ['2007',  1030,      540]
+	        ]);
+	
+	        var options = {
+	          title: 'Company Performance',
+	          backgroundColor: { fill:'transparent' }
+	        };
+	
+	        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+	        chart.draw(data, options);
+	      }
+	    </script>
+    </ui:define> 
+	<ui:define name="content">
+	
+		<h1> PÁGINA DE TESTE </h1>
+		
+	<h:form>
+ 
+	 	<p:panel header="Teste #{graphicsController.value}">
+	 		teste
+	 	</p:panel>
+
+	</h:form>
+		
+		 <div id="chart_div" style="width: 900px; height: 500px;"></div>
+		
+		<p:button value="BOTAO"></p:button>
+	
+	</ui:define>
+</ui:composition>

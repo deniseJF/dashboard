@@ -1,4 +1,4 @@
-package dashboard.entity;
+package myproject.dashboard.entity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

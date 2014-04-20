@@ -1,8 +1,8 @@
-package dashboard.main;
+package myproject.dashboard.main;
 
-import dashboard.entity.Person;
-import dashboard.entity.Statistics;
-import dashboard.service.DataDownloader;
+import myproject.dashboard.entity.Person;
+import myproject.dashboard.entity.Statistics;
+import myproject.dashboard.service.DataDownloader;
 
 public class Main {
 	public static void main(String[] args) throws Throwable{

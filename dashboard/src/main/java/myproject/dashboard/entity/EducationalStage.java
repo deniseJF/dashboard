@@ -1,4 +1,4 @@
-package dashboard.entity;
+package myproject.dashboard.entity;
 
 public enum EducationalStage {
 	NONE(""),

@@ -1,4 +1,4 @@
-package dashboard.entity;
+package myproject.dashboard.entity;
 
 import java.util.ArrayList;
 import java.util.List;
